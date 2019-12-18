@@ -11,6 +11,7 @@ const PageRouter = () => (
     <Route path={CURRENT_EPISODE_BY_SHOW} component={EpisodePage} />
     <Route path={CURRENT_SHOW} component={ShowDetailsPage} />
     <Route path={SHOWS} component={ShowsListPage} />
+    <Route component={ShowsListPage}/>
   </Switch>
 );
 
