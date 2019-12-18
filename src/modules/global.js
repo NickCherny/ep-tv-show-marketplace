@@ -1,6 +1,8 @@
 import { createAction, handleActions } from 'redux-actions';
+import {createSelector} from "reselect";
 
 export const startRequest = createAction('global/REQUEST/START');
+
 export const finishRequest = createAction('global/REQUEST/FINISH');
 
 const initializeState = {
@@ -26,5 +28,9 @@ const reducer = handleActions(
 );
 
 export const getRequests = state => state.global.requests;
+export const getRequestsByActionType = type => createSelector(
+  getRequests,
+  (requests) => requests.filter(({ contractor }) => contractor === type),
+);
 
 export default reducer;

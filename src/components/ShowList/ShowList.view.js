@@ -4,7 +4,7 @@ import 'react-virtualized/styles.css'
 
 import ItemShowCard from "../ItemShowCard";
 
-const ShowList = ({ items }) => {
+const ShowList = ({ items, dimensions: { height } }) => {
   return (
     <>
       <AutoSizer>
@@ -12,11 +12,10 @@ const ShowList = ({ items }) => {
           return (
             <List
               width={width}
-              height={document.documentElement.clientHeight}
+              height={height}
               rowCount={items.length}
-              rowHeight={document.documentElement.clientHeight}
+              rowHeight={180}
               rowRenderer={({ key, index, style }) => {
-                console.log(items);
                 return (
                   <div key={key} style={style}>
                     <ItemShowCard {...items[index]} />

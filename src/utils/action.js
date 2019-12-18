@@ -1,4 +1,5 @@
 import flowRight from 'lodash/flowRight';
+import dayjs from "dayjs";
 
 const constValue = v => v;
 
@@ -13,7 +14,7 @@ const prepareTransformer = maps => Array.isArray(maps) ? flowRight(maps) : maps;
  * @param {?Function} options.mapMeta
  * @return {Function}
  */
-export const createFetchAction = ({ prefix, request, mapPayload = constValue, mapMeta, options }) => {
+export const createFetchAction = ({ prefix, request, mapPayload = constValue, mapMeta }) => {
   const FETCH = `${prefix}_FETCH`;
   const RECEIVE = `${prefix}_RECEIVE`;
   const ERROR = `${prefix}_ERROR`;
@@ -47,7 +48,7 @@ export const createFetchAction = ({ prefix, request, mapPayload = constValue, ma
                 type: FETCH,
                 payload,
               },
-              at: Date.now()
+              at: dayjs().toDate()
             },
           }),
         },

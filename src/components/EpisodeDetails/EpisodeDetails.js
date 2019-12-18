@@ -1,21 +1,16 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
+import {useSelector} from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-import { requestEpisodeById } from '../../modules/episode';
+import { getCurrentEpisode } from '../../modules/shows';
 
 const withEpisodeDetails = ViewComponent => props => {
-  const dispatch = useDispatch();
-  const { showId, seasonId, episodeId } = useParams();
-
-  useEffect(
-    () => {
-      dispatch(requestEpisodeById({ showId, seasonId, episodeId }))
-    },
-    []
-  );
+  const { showId, episodeId } = useParams();
+  const episode = useSelector(getCurrentEpisode({ showId, episodeId }));
 
   return (
-    <ViewComponent {...props} />
+    <ViewComponent {...episode} {...props} />
   )
 };
+
+export default withEpisodeDetails;

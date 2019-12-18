@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import { handleActions } from 'redux-actions';
 import { createSelector } from 'reselect';
 import { schema, normalize } from 'normalizr';
@@ -23,7 +24,10 @@ export const requestShowsList = createFetchAction({
         const { data: episodes } = await getEpisodesByShow(item.id);
         return {
           ...item,
-          episodes,
+          episodes: episodes.map(({ id, ...data }) => ({
+            ...data,
+            id: String(id),
+          })),
         };
       }));
 
@@ -33,33 +37,39 @@ export const requestShowsList = createFetchAction({
     } catch (e) {
       return Promise.reject(e);
     }
-  }
+  },
+  mapMeta: () => ({
+    expiresIn: dayjs().add(1000, 'minute').toDate()
+  })
 });
 
 const reducer = handleActions({
-  [requestShowsList.RECEIVE]: (state, { payload }) => flowRight(
+  [requestShowsList.RECEIVE]: (state, { payload, meta }) => flowRight(
     set('entities.shows', payload.entities),
-    set('items.shows', payload.result)
+    set('items.shows', payload.result),
+    set('meta.cache.expiresIn', meta.expiresIn),
   )(state),
 }, initializeState);
 
 export const getEveryShows = createSelector(
-  state => get(state, 'shows.entities.shows', {}),
-  state => get(state, 'shows.items.shows', []),
+  state => get(state, 'shows.entities.shows.shows', null),
+  state => get(state, 'shows.items.shows', null),
   (data, ids) => {
-    return ids.map(id => data[id]);
+    return Array.isArray(ids) && data ? ids.map(id => data[id]) : []
   }
 );
 
 export const getShowById = showId => state => get(
   state,
-  `shows.entities.shows.${showId}`,
+  `shows.entities.shows.shows.${showId}`,
   null
 );
 
 export const getCurrentEpisode = ({ showId, episodeId }) => state => {
-  const showData = get(state, `shows.entities.shows.${showId}`, {});
-  return showData.episodes.find(({ id }) => id === episodeId);
+  const { episodes } = get(state, `shows.entities.shows.shows.${showId}`, {});
+  return Array.isArray(episodes) ? episodes.find(({ id }) => id === episodeId) : null;
 };
+
+export const getCacheExpiresIn = state => get(state, 'shows.meta.cache.expiresIn', null);
 
 export default reducer;

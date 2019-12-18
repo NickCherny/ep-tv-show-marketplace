@@ -1,0 +1,52 @@
+.ShowDetailsContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 32px 16px;
+}
+.ShowDetailsMediaContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+.ShowDetailsMediaImage {
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+.ShowDetailsBodyContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+}
+.ShowDetailsBodyTitle {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: #282c34;
+}
+.ShowDetailsBodyContent {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 32px;
+    color: #4c5463;
+}
+.ShowDetailsDetailsList {
+    display: flex;
+    flex-direction: column;
+}
+.ShowDetailsItemColumn {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    color: #282c34;
+}
+.ShowDetailsItemColumn:hover {
+    color: #4A90E2;
+}
+.ShowDetailsItemColumnArticle {
+    font-weight: 400;
+}
+.ShowDetailsItemColumnText {
+    font-weight: 200;
+}

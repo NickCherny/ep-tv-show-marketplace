@@ -1,12 +1,12 @@
-import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import {useParams} from "react-router-dom";
+import React from 'react';
 
-import { getCurrentEpisode } from '../../../modules/shows';
+import EpisodeDetails from '../../EpisodeDetails';
+import MainLayout from "../../layouts/MainLayout/MainLayout";
 
 export default () => {
-  const dispatch = useDispatch();
-  const { showId, episodeId } = useParams();
-  const episode = useSelector(getCurrentEpisode({ showId, episodeId }));
-  return <h1>Episode</h1>
+  return (
+    <MainLayout>
+      <EpisodeDetails />
+    </MainLayout>
+  );
 };

@@ -1,0 +1,13 @@
+.ShowCardSkeletonContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+}
+
+.ShowCardSkeletonLabel {
+    margin-bottom: 16px;
+}
+
+.ShowCardSkeletonMediaContainer {
+    margin-bottom: 32px;
+}

@@ -1,5 +1,6 @@
 import uuid from 'uuid';
 import get from 'lodash/get';
+import dayjs from "dayjs";
 
 import { startRequest, finishRequest } from '../global';
 
@@ -15,22 +16,14 @@ const apiCallsManager = store => next => async (action) => {
   const requestId = uuid();
 
   try {
-    store.dispatch(startRequest({
-      id: requestId,
-      contractor: action.type,
-      startAt: Date.now()
-    }));
+    store.dispatch(startRequest({ id: requestId, contractor: action.type, startAt: dayjs().toDate() }));
 
     const response = await request(payload);
     store.dispatch(resolve(response));
   } catch (e) {
     store.dispatch(reject(e));
   } finally {
-    store.dispatch(finishRequest({
-      id: requestId,
-      contractor: action.type,
-      finishAt: Date.now()
-    }));
+    store.dispatch(finishRequest({ id: requestId, contractor: action.type, finishAt: dayjs().toDate() }));
   }
 };
 

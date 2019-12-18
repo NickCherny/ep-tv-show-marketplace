@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -8,9 +8,7 @@ const withShowDetails = ViewComponent => props => {
   const { showId } = useParams();
   const showPayload = useSelector(getShowById(showId));
 
-  console.log(showPayload);
-
-  return (
+  return Boolean(showPayload) && (
     <ViewComponent {...showPayload} {...props} />
   )
 };
