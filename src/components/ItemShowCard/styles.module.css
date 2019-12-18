@@ -1,0 +1,26 @@
+.ItemShowCardContainer {
+    padding: 20px;
+}
+
+.ItemShowCardMedia {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+
+.ItemShowCardBody {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 4;
+}
+
+.ItemShowEpisodesView {
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+.ItemShowEpisodeLink {
+    font-size: 14px;
+    color: #282c34;
+    text-decoration: none;
+}
