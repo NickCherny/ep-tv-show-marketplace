@@ -1,9 +1,9 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 
-import fetchMiddleware from './middlewares/fetchMiddleware';
-import globalReducer from './global';
-import showsReducer from "./shows";
+import fetchMiddleware from '../utils/middlewares/fetchMiddleware';
+import globalReducer from './reducers/global';
+import showsReducer from "./reducers/shows";
 
 const rootReducer = combineReducers({
   global: globalReducer,

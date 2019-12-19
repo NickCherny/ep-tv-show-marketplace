@@ -6,10 +6,10 @@ import set from 'lodash/fp/set';
 import flowRight from 'lodash/flowRight';
 import get from 'lodash/get';
 
-import { createFetchAction } from '../utils/action';
-import { getShows, getEpisodesByShow } from '../utils/api';
+import { createFetchAction } from '../../utils/action';
+import { getShows, getEpisodesByShow } from '../../utils/api';
 
-const initializeState = {
+export const initializeState = {
   items: {},
   entities: null
 };
@@ -40,7 +40,7 @@ export const requestShowsList = createFetchAction({
   },
   mapMeta: () => ({
     expiresIn: dayjs().add(1000, 'minute').toDate()
-  })
+  }),
 });
 
 const reducer = handleActions({

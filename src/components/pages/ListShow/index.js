@@ -2,8 +2,8 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import dayjs from "dayjs";
 
-import {requestShowsList, getCacheExpiresIn} from "../../../modules/shows";
-import { getRequestsByActionType } from '../../../modules/global';
+import {requestShowsList, getCacheExpiresIn} from "../../../store/reducers/shows";
+import { getRequestsByActionType } from '../../../store/reducers/global';
 import MainLayout from "../../layouts/MainLayout";
 import ShowList from "../../ShowList";
 import ItemShowCardSkeleton from "../../ItemShowCard/ItemShowCardSkeleton";

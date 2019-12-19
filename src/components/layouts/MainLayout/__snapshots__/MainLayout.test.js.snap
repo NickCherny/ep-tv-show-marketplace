@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MainLayout /> snapshot 1`] = `
+<main>
+  <header
+    className="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionRelative MuiAppBar-colorPrimary"
+  >
+    <div
+      className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    >
+      Hmm...
+    </div>
+  </header>
+  <div
+    className="MuiContainer-root MuiContainer-maxWidthMd"
+  >
+    <article />
+  </div>
+</main>
+`;

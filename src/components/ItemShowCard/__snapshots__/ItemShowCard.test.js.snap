@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ItemShowCardView /> snapshot 1`] = `
+<article
+  className="ItemShowCardContainer"
+>
+  <div
+    className="ItemShowHeaderContent"
+  >
+    <img
+      alt="Kirby Buckets"
+      className="ItemShowCardMedia"
+      src="http://static.tvmaze.com/uploads/images/medium_portrait/1/4600.jpg"
+    />
+    <div>
+      <div />
+      <div
+        className="ItemShowCardHeaderSection"
+      >
+        Duration-
+        2
+      </div>
+    </div>
+  </div>
+  <div>
+    <h4
+      className="ItemShowCardEpisodeListTitle"
+    >
+      Episodes: 
+    </h4>
+    <ul
+      className="ItemShowCardEpisodesList"
+    >
+      <li
+        className="ItemShowCardEpisodeItemContainer"
+      >
+        <div />
+      </li>
+      <li
+        className="ItemShowCardEpisodeItemContainer"
+      >
+        <div />
+      </li>
+    </ul>
+  </div>
+</article>
+`;

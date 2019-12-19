@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import uuid from 'uuid';
 
 import { useWindowDimensions } from '../../utils/hooks';
-import { getEveryShows } from '../../modules/shows';
+import { getEveryShows } from '../../store/reducers/shows';
 
 const withShowList = ViewComponent => props => {
   const shows = useSelector(getEveryShows);

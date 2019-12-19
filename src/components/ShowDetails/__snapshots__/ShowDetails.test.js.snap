@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ShowDetails /> snapshot 1`] = `
+<section
+  className="ShowDetailsContainer"
+>
+  <div
+    className="ShowDetailsMediaContainer"
+  >
+    <img
+      alt="Kirby Buckets"
+      className="ShowDetailsMediaImage"
+      src="http://static.tvmaze.com/uploads/images/medium_portrait/1/4600.jpg"
+    />
+  </div>
+  <div
+    className="ShowDetailsBodyContainer"
+  >
+    <h2
+      className="ShowDetailsBodyTitle"
+    >
+      Kirby Buckets
+    </h2>
+    <div
+      className="ShowDetailsBodyContent"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<p>The single-camera series that mixes live-action and animation stars Jacob Bertrand as the title character.</p>",
+        }
+      }
+    />
+    <ul
+      className="ShowDetailsDetailsList"
+    >
+      <div />
+      <div />
+    </ul>
+  </div>
+</section>
+`;

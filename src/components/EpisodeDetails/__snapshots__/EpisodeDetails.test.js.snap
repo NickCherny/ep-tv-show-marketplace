@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EpisodeDetails /> snapshot 1`] = `
+<div
+  className="EpisodeDetailsContainer"
+>
+  <header
+    className="EpisodeDetailsHeader"
+  >
+    <h2
+      className="EpisodeDetailsTitle"
+    >
+      Cars, Buses and Lawnmowers
+    </h2>
+    <h3
+      className="EpisodeDetailsArticle"
+    >
+      Episode - 
+      1
+    </h3>
+  </header>
+  <article>
+    <div
+      className="EpisodeDetailsDescriptionContent"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<p>Kirby learns about a character design contest featuring the </p>",
+        }
+      }
+    />
+  </article>
+</div>
+`;

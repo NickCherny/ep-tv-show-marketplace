@@ -2,7 +2,7 @@ import uuid from 'uuid';
 import get from 'lodash/get';
 import dayjs from "dayjs";
 
-import { startRequest, finishRequest } from '../global';
+import { startRequest, finishRequest } from '../../store/reducers/global';
 
 const apiCallsManager = store => next => async (action) => {
   const isRequest = get(action, 'meta.isRequest', false);
@@ -10,6 +10,7 @@ const apiCallsManager = store => next => async (action) => {
   if (!isRequest) {
     return next(action);
   }
+
   const payload = get(action, 'payload');
   const request = get(action, 'meta.request', Function.prototype);
   const { resolve, reject } = get(action, 'meta.actions');
