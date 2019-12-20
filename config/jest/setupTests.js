@@ -1,7 +1,5 @@
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import configureStore from 'redux-mock-store';
-import apiCallsManager from './utils/middlewares/fetchMiddleware';
 
 configure({ adapter: new Adapter() });
 

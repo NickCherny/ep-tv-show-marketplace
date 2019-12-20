@@ -2,7 +2,7 @@ import configureStore from 'redux-mock-store';
 import apiCallsManager from '../../utils/middlewares/fetchMiddleware';
 import { initializeState, requestShowsList } from './shows';
 import { startRequest, finishRequest } from './global';
-import { __mock_data__ } from '../../setupTests';
+import { __mock_data__ } from '../../../config/jest/setupTests';
 
 const mockShows = __mock_data__.shows;
 const mockEpisodes = __mock_data__.shows[0].episodes;

@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
-import { __mock_data__ } from '../../setupTests';
+import { __mock_data__ } from '../../../config/jest/setupTests';
 import EpisodeDetails from "./index";
 import EpisodeDetailsView from './EpisodeDetails.view';
 
